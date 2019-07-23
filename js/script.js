@@ -51,19 +51,14 @@ function getRandomQuote() {
 
 // Function to change the background color randomly.
 // Created with the help of Steve Griffith's tutorial -- https://www.youtube.com/watch?v=rsgceMJBXcw
+// And limited the color range so the background is never white, thanks to Matt Anderson, from the Fullstack JavaScript Techdegree.
 
 function getRandomColor() {
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
+  let r = Math.floor(Math.random() * 190);
+  let g = Math.floor(Math.random() * 190);
+  let b = Math.floor(Math.random() * 190);
 
   let color = 'rgb(' + r + ',' + g + ',' + b + ')';
-
-  while (color === 'rgb(255, 255, 255)') {
-    r = Math.floor(Math.random() * 256);
-    g = Math.floor(Math.random() * 256);
-    b = Math.floor(Math.random() * 256);
-  };
 
   document.body.style.backgroundColor = color;
 };
