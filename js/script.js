@@ -58,6 +58,13 @@ function getRandomColor() {
   let b = Math.floor(Math.random() * 256);
 
   let color = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+  while (color === 'rgb(255, 255, 255)') {
+    r = Math.floor(Math.random() * 256);
+    g = Math.floor(Math.random() * 256);
+    b = Math.floor(Math.random() * 256);
+  };
+
   document.body.style.backgroundColor = color;
 };
 
@@ -78,7 +85,7 @@ function printQuote() {
   } else if (randomQuote.year) {
     html +='<p class="source">' + randomQuote.source + '<span class="year">' + randomQuote.year + '</span></p>'
   };
- 
+
   document.getElementById('quote-box').innerHTML = html;
 };
 
